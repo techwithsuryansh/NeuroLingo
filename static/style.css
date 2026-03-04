@@ -1,0 +1,470 @@
+/* ----------- BASE ----------- */
+
+body {
+    margin: 0;
+    font-family: "Inter", Arial, sans-serif;
+    background: #f5f6f8;
+    color: #222;
+    transition: 0.3s;
+}
+
+/* ----------- LAYOUT ----------- */
+
+.layout {
+    display: flex;
+    height: 100vh;
+}
+
+/* ----------- SIDEBAR ----------- */
+
+.sidebar {
+    width: 230px;
+    background: #0f172a;
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    margin-bottom: 40px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #cbd5e1;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.2s;
+    font-size: 15px;
+}
+
+.sidebar a:hover {
+    background: #1e293b;
+    color: white;
+}
+
+.dark-toggle {
+    margin-top: auto;
+    padding: 10px;
+    background: #1e293b;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.dark-toggle:hover {
+    background: #334155;
+}
+
+/* ----------- MAIN ----------- */
+
+.main {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ----------- CARD ----------- */
+
+.card {
+    background: white;
+    padding: 35px;
+    width: 620px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+/* ----------- LANGUAGE ROW ----------- */
+
+.language-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.language-row button {
+    height: 40px;
+    width: 45px;
+    font-size: 18px;
+}
+
+/* ----------- DROPDOWN ----------- */
+
+.dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.search-input:focus {
+    border-color: #0f172a;
+}
+
+.dropdown-list {
+    position: absolute;
+    background: white;
+    width: 100%;
+    max-height: 220px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 4px;
+    z-index: 100;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.dropdown-item:hover {
+    background: #0f172a;
+    color: white;
+}
+
+/* ----------- TEXTAREA ----------- */
+
+textarea {
+    width: 100%;
+    height: 130px;
+    resize: none;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 14px;
+    margin-bottom: 18px;
+    transition: 0.2s;
+}
+
+textarea:focus {
+    border-color: #0f172a;
+}
+
+/* ----------- BUTTONS ----------- */
+
+button {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    background: #0f172a;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #1e293b;
+}
+
+.action-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* ----------- OUTPUT ----------- */
+
+.output-box {
+    border-top: 1px solid #eee;
+    padding-top: 18px;
+    min-height: 70px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ----------- LOADING ----------- */
+
+.loading {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.spinner {
+    width: 18px;
+    height: 18px;
+    border: 3px solid #ddd;
+    border-top: 3px solid #0f172a;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ----------- HIGHLIGHT WORD ----------- */
+
+.highlight {
+    background: #0f172a;
+    color: white;
+    padding: 3px 6px;
+    border-radius: 5px;
+}
+
+/* ----------- HISTORY ----------- */
+
+#history_list {
+    max-height: 400px;
+    overflow-y: auto;
+    font-size: 14px;
+}
+
+/* ----------- DARK MODE ----------- */
+
+.dark {
+    background: #0f172a;
+    color: white;
+}
+
+.dark .card {
+    background: #1e293b;
+    color: white;
+}
+
+.dark textarea,
+.dark .search-input {
+    background: #0f172a;
+    color: white;
+    border: 1px solid #334155;
+}
+
+.dark .dropdown-list {
+    background: #1e293b;
+    border: 1px solid #334155;
+}
+
+.dark .dropdown-item:hover {
+    background: #334155;
+}
+
+.dark button {
+    background: #334155;
+}
+.dark button:hover {
+    background: #475569;
+}
+
+.dropdown-wrapper {
+    position: relative;
+}
+
+.dropdown-list {
+    position: absolute;
+    background: white;
+    width: 100%;
+    max-height: 220px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 4px;
+    z-index: 100;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.hidden {
+    display: none;
+
+}
+
+/* ========================= */
+/* RESPONSIVE DESIGN */
+/* ========================= */
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .dark-toggle {
+        margin-top: 0;
+    }
+
+    .main {
+        padding: 30px 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 600px;
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .language-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .language-row button {
+        width: 100%;
+        height: 45px;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    textarea {
+        height: 110px;
+    }
+
+    .action-row {
+        flex-direction: column;
+    }
+
+    .action-row button {
+        width: 100%;
+    }
+
+    .sidebar {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .sidebar h2 {
+        font-size: 18px;
+    }
+
+}
+
+/* Small Phones */
+
+@media (max-width: 420px) {
+
+    .main {
+        padding: 20px 15px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    textarea {
+        font-size: 13px;
+    }
+
+    button {
+        font-size: 13px;
+    }
+
+
+}
+
+
+
+/* ========================= */
+/* DARK MODE SWITCH */
+/* ========================= */
+
+.theme-switch{
+    margin-top:auto;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+/* Switch container */
+
+.switch{
+    position:relative;
+    display:inline-block;
+    width:46px;
+    height:24px;
+}
+
+/* Hide default checkbox */
+
+.switch input{
+    opacity:0;
+    width:0;
+    height:0;
+}
+
+/* Slider */
+
+.slider{
+    position:absolute;
+    cursor:pointer;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:#334155;
+    border-radius:34px;
+    transition:0.3s;
+}
+
+/* Circle */
+
+.slider:before{
+    position:absolute;
+    content:"";
+    height:18px;
+    width:18px;
+    left:3px;
+    bottom:3px;
+    background:white;
+    border-radius:50%;
+    transition:0.3s;
+}
+
+/* Checked state */
+
+.switch input:checked + .slider{
+    background:#22c55e;
+}
+.switch input:checked + .slider:before{
+    transform:translateX(22px);
+}

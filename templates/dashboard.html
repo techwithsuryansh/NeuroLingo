@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analytics</title>
+</head>
+<body>
+<h2>Analytics Dashboard</h2>
+
+<p>Total Translations: {{ total }}</p>
+
+<h3>Language Usage:</h3>
+<ul>
+{% for lang in languages %}
+    <li>{{ lang[0] }} : {{ lang[1] }}</li>
+{% endfor %}
+</ul>
+
+<a href="/">Back</a>
+</body>
+</html>

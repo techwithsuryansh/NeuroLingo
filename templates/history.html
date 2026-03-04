@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Translation History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h2>NeuroLingo</h2>
+        <nav>
+            <a href="/">🏠 <span>Translator</span></a>
+            <a href="/history">📜 <span>History</span></a>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <div class="card">
+            <h3>Translation History</h3>
+
+            <table border="1" width="100%">
+                <tr>
+                    <th>Source</th>
+                    <th>Translated</th>
+                    <th>Time</th>
+                </tr>
+
+                {% for row in data %}
+                <tr>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[5] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </main>
+
+</div>
+</body>
+</html>
