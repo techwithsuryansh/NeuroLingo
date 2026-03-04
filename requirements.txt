@@ -1,7 +1,3 @@
 flask
-gunicorn
 requests
-python-dotenv
-
-
-huggingface_hub
+gunicorn
